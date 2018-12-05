@@ -1,0 +1,6 @@
+<conversation-item
+  *ngFor="let conversation of conversations; let i = index"
+  [conversation]="conversation"
+  [selected]="i === selsctedIndex"
+  (click)="setMessagesId(conversation.messagesId, i)">
+</conversation-item>

@@ -1,0 +1,49 @@
+.conversation {
+  display: flex;
+  border-bottom: 2px solid #e6dcdc;
+  padding: 12px 20px;
+  cursor: pointer;
+  position: relative;
+  &__selected {
+    background-color: #ececec;
+  }
+  &__avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+  }
+  &__details {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-left: 10px;
+  }
+  &__author {
+    color: #2A2A2A;
+    font-size: 1rem;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+  }
+  &__author-date {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__message {
+    margin: 5px 0;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: #b3b2b2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  &__date {
+    color: #2A2A2A;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}

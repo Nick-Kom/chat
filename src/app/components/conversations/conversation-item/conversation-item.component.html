@@ -1,0 +1,15 @@
+<div class="conversation"
+     [ngClass]="{'conversation__selected': selected}">
+  <div class="conversation__avatar"
+       [ngStyle]="{'background-image': 'url(' + conversation.avatar + ')'}">
+  </div>
+  <div class="conversation__details">
+    <div class="conversation__author-date">
+      <p class="conversation__author">{{conversation.name}}</p>
+      <span class="conversation__date">{{ conversation.createdAt | date: 'MMM d' }}</span>
+    </div>
+    <p class="conversation__message">
+      {{conversation.lastMessage}}
+    </p>
+  </div>
+</div>

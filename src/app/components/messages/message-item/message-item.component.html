@@ -1,0 +1,14 @@
+<div class="message" *ngIf="message"
+     [ngClass]="{ 'message__sender': message.sender === 1}">
+  <div class="message__avatar"
+       *ngIf="message.sender"
+       [ngStyle]="{'background-image': 'url(' + message.avatar + ')'}"></div>
+  <div class="message__bubble">
+    <p class="message__bubble-text"
+       [ngClass]="{ 'message__bubble-text-sender': message.sender === 1}">{{message.message}}</p>
+    <span
+      class="message__bubble-date">
+      {{message.createdAt | date:'h:mm a'}} | {{message.createdAt | date: 'MMM d'}}
+    </span>
+  </div>
+</div>
