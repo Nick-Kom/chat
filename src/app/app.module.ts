@@ -5,16 +5,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ApiService } from './services/api/api.service';
 import { ChatService } from './services/chat/chat.service';
-import { ChatModule } from './page/chat/chat.module';
+import { ChatModule } from './_pages_/chat/chat.module';
+import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './_pages_/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    ChatModule
+    ChatModule,
+    AppRoutingModule
   ],
   providers: [ApiService, ChatService],
   bootstrap: [AppComponent]

@@ -5,11 +5,13 @@ import { ConversationsComponent } from '../../components/conversations/conversat
 import { ConversationItemComponent } from '../../components/conversations/conversation-item/conversation-item.component';
 import { MessageItemComponent } from '../../components/messages/message-item/message-item.component';
 import { MessagesComponent } from '../../components/messages/messages.component';
+import { ChatRoutingModule } from './chat-routing.module';
 
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    ChatRoutingModule
   ],
   declarations: [
     ChatComponent,

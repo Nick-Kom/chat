@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  API_ENDPOINT: string = 'http://5c06d5f2c16e120013947ad4.mockapi.io';
+  API_ENDPOINT = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 

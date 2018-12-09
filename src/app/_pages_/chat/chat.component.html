@@ -9,14 +9,12 @@
     </div>
 
     <div class="conversations__list">
-      <app-conversations (getMessagesId)="getMessages($event)"></app-conversations>
+      <app-conversations></app-conversations>
     </div>
   </aside>
   <div class="messages-wrap">
-    <div class="messages" *ngIf="messages"
-         [ngClass]="{'centered-spinner': spinner}">
-      <app-messages class="messages-container" *ngIf="messages && !spinner" [messages]="messages"></app-messages>
-      <span class="spinner spinner-green" *ngIf="spinner"></span>
+    <div class="messages">
+      <router-outlet></router-outlet>
     </div>
     <div class="message__input-wrap">
       <input type="text" class="message__input" placeholder="Type a message">

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ChatService } from '../../services/chat/chat.service';
 import { Conversation } from '../../types/conversation/conversation.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-conversations',
@@ -11,9 +12,9 @@ export class ConversationsComponent implements OnInit {
   conversations: Conversation[];
   @Output()
   getMessagesId = new EventEmitter();
-  selsctedIndex: number = 0;
+  selsctedIndex = 0;
 
-  constructor(private chatService: ChatService) {
+  constructor(private router: Router, private chatService: ChatService) {
   }
 
   ngOnInit() {
@@ -21,13 +22,14 @@ export class ConversationsComponent implements OnInit {
       if (res.ok) {
         this.conversations = res.data;
       } else {
+        this.conversations = [];
       }
     });
   }
 
   setMessagesId(messagesId: string, index: number) {
-    this.getMessagesId.emit(messagesId);
     this.selsctedIndex = index;
+    this.router.navigate([`conversation/${messagesId}`]);
   }
 
 }

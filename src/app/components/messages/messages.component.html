@@ -1,3 +1,8 @@
+<div *ngIf="messages && !spinner">
 <app-message-item *ngFor="let message of messages"
                   [message]="message">
 </app-message-item>
+</div>
+<div class="centered-spinner" *ngIf="spinner">
+  <span class="spinner spinner-green"></span>
+</div>

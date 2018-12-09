@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Conversation } from '../../../types/conversation/conversation.interface';
 
 @Component({
-  selector: 'conversation-item',
+  selector: 'app-conversation-item',
   templateUrl: './conversation-item.component.html',
   styleUrls: ['./conversation-item.component.scss'],
 })
